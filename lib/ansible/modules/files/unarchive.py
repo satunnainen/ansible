@@ -657,7 +657,7 @@ class TgzArchive(object):
         if self._files_in_archive and not force_refresh:
             return self._files_in_archive
 
-        cmd = [self.cmd_path, '--list', '-C', self.b_dest]
+        cmd = [self.cmd_path, '--list']
         if self.zipflag:
             cmd.append(self.zipflag)
         if self.opts:
