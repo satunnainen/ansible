@@ -750,10 +750,6 @@ class TgzArchive(object):
             cmd.append(self.zipflag)
         if self.opts:
             cmd.extend(['--show-transformed-names'] + self.opts)
-        if self.file_args['owner']:
-            cmd.append('--owner=' + quote(self.file_args['owner']))
-        if self.file_args['group']:
-            cmd.append('--group=' + quote(self.file_args['group']))
         if self.module.params['keep_newer']:
             cmd.append('--keep-newer-files')
         if self.excludes:
